@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">OwlJena</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="category">
+        <item>Car</item>
+        <item>Car gadgets</item>
+        <item>Sign</item>
+        <item>Traffic light</item>
+    </string-array>
+    <string-array name="car">
+        <item>Basic</item>
+        <item>Emergency</item>
+        <item>Police</item>
+        <item>Bus</item>
+    </string-array>
+    <string-array name="carGadget">
+        <item>Flashing light</item>
+        <item>Special Signal</item>
+    </string-array>
+    <string-array name="sign">
+        <item>Main road</item>
+        <item>Secondary road</item>
+    </string-array>
+    <string-array name="trafficLight">
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Red</item>
+        <item>None</item>
+    </string-array>
+
+</resources>
