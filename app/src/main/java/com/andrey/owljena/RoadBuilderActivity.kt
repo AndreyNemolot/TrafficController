@@ -24,7 +24,7 @@ class RoadBuilderActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.andrey.owljena.R.layout.activity_road_builder)
+        setContentView(R.layout.activity_road_builder)
         setSupportActionBar(tbRoadBuilder)
 
         val intent = intent
@@ -68,7 +68,7 @@ class RoadBuilderActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(com.andrey.owljena.R.menu.road_builder_menu, menu)
+        menuInflater.inflate(R.menu.road_builder_menu, menu)
         return true
     }
 
@@ -91,7 +91,8 @@ class RoadBuilderActivity : AppCompatActivity() {
 
     private fun selectItem(roadBuilderArray: ArrayList<Category>, groupPosition: Int, childPosition: Int) {
         if (roadBuilderArray[groupPosition].categoryName.equals("Car") ||
-            roadBuilderArray.get(groupPosition).categoryName.equals("Traffic light")
+            roadBuilderArray.get(groupPosition).categoryName.equals("Traffic light") ||
+            roadBuilderArray.get(groupPosition).categoryName.equals("Direction")
         ) {
             for (i in roadBuilderArray[groupPosition].subcategoryArray.indices) {
                 roadBuilderArray[groupPosition].subcategoryArray.get(i).selected = false

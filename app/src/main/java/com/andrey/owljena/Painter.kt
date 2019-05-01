@@ -27,8 +27,8 @@ class Painter(val context: Context, val roadMap: HashMap<String, Road>) {
         UP_ROAD to arrayOf(150, 550, 50, 550), DOWN_ROAD to arrayOf(850, 1250, 950, 1250)
     )
     val GADGET_COORDINATE: HashMap<String, Array<Int>> = hashMapOf(
-        LEFT_ROAD to arrayOf(220, 1130, 220, 1030), RIGHT_RAOD to arrayOf(750, 700,750, 800),
-        UP_ROAD to arrayOf(250, 650, 350, 650), DOWN_ROAD to arrayOf(550, 1150, 450, 1150)
+        LEFT_ROAD to arrayOf(260, 930, 260, 840), RIGHT_RAOD to arrayOf(730, 850,730, 950),
+        UP_ROAD to arrayOf(430, 690, 530, 710), DOWN_ROAD to arrayOf(590, 1120, 490, 1150)
     )
 
 
@@ -80,9 +80,6 @@ class Painter(val context: Context, val roadMap: HashMap<String, Road>) {
             result = paintGadget(canvas, result, road, road.gadget[i].id)
 
         }
-
-
-
 
 
         return result

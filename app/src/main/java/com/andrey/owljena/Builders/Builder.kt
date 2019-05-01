@@ -9,6 +9,7 @@ interface Builder {
     fun setCar(id: Int, carName: String)
     fun setSign(sign: List<Sign>)
     fun setTrafficLight(id: Int, color: String)
+    fun setDirection(id: Int, name: String)
     fun setRoadName(roadName: String)
     fun setGadget(gadget: List<Gadget>)
     fun getResult() : Road

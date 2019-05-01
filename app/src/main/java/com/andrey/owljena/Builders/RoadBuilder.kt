@@ -36,6 +36,11 @@ class RoadBuilder:Builder {
         road.trafficLight.color = color
     }
 
+    override fun setDirection(id: Int, name: String) {
+        road.car.direction.id = id
+        road.car.direction.name = name
+    }
+
     override fun setRoadName(roadName: String) {
         road.roadName = roadName
     }

@@ -12,6 +12,8 @@ class RoadParser(val roadBuilder: RoadBuilder, val roadBuilderArray: ArrayList<C
     val CAR_GADGETS = "Car gadgets"
     val SIGN = "Sign"
     val TRAFFIC_LIGHT = "Traffic light"
+    val DIRECTION = "Direction"
+
 
     fun parse(){
         parseRoadName(roadName)
@@ -26,6 +28,7 @@ class RoadParser(val roadBuilder: RoadBuilder, val roadBuilderArray: ArrayList<C
             CAR_GADGETS -> parseGadget(category.subcategoryArray)
             SIGN -> parseSign(category.subcategoryArray)
             TRAFFIC_LIGHT -> parseTrafficLight(category.subcategoryArray)
+            DIRECTION -> parseDirection(category.subcategoryArray)
         }
     }
 
@@ -64,6 +67,14 @@ class RoadParser(val roadBuilder: RoadBuilder, val roadBuilderArray: ArrayList<C
             }
         }
         roadBuilder.setSign(signResult)
+    }
+
+    fun parseDirection(direction: ArrayList<SubCategory>){
+        for(i in direction.indices){
+            if(direction[i].selected) {
+                roadBuilder.setDirection(i, direction[i].subcategoryName)
+            }
+        }
     }
 
     fun parseRoadName(roadName: String){

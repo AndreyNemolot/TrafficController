@@ -9,6 +9,7 @@ class RoadData(val context: Context) {
     val CAR_GADGETS = 1
     val SIGN = 2
     val TRAFFIC_LIGHT = 3
+    val DIRECTION = 4
 
     val roadBuildArray: ArrayList<Category>
 
@@ -40,6 +41,7 @@ class RoadData(val context: Context) {
             CAR_GADGETS -> context.resources.getStringArray(R.array.carGadget).toCollection(ArrayList())
             SIGN -> context.resources.getStringArray(R.array.sign).toCollection(ArrayList())
             TRAFFIC_LIGHT -> context.resources.getStringArray(R.array.trafficLight).toCollection(ArrayList())
+            DIRECTION -> context.resources.getStringArray(R.array.direction).toCollection(ArrayList())
             else -> ArrayList<String>()
         }
 }

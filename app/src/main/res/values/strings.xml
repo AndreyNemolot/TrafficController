@@ -12,6 +12,7 @@
         <item>Car gadgets</item>
         <item>Sign</item>
         <item>Traffic light</item>
+        <item>Direction</item>
     </string-array>
     <string-array name="car">
         <item>Basic</item>
@@ -32,6 +33,12 @@
         <item>Yellow</item>
         <item>Red</item>
         <item>None</item>
+    </string-array>
+    <string-array name="direction">
+        <item>Up</item>
+        <item>Down</item>
+        <item>Left</item>
+        <item>Right</item>
     </string-array>
 
 </resources>
