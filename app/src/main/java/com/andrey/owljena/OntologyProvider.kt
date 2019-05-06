@@ -1,28 +1,35 @@
 package com.andrey.owljena
 
-import com.hp.hpl.jena.ontology.OntModel
-import com.hp.hpl.jena.ontology.OntModelSpec
-import com.hp.hpl.jena.rdf.model.ModelFactory
+
 import com.hp.hpl.jena.util.FileManager
+import org.semanticweb.owlapi.apibinding.OWLManager
+import org.semanticweb.owlapi.model.IRI
+import org.semanticweb.owlapi.model.OWLOntology
 
 import java.io.IOException
+import java.io.InputStream
+import org.semanticweb.owlapi.model.OWLOntologyManager
+import java.io.File
+
 
 class OntologyProvider private constructor() {
-    var ontology: OntModel
+    lateinit var ontology: OWLOntology
 
-    init {
-        ontology = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM_RULE_INF)
-    }
+//    fun loadOntology(ontologyPath: String) {
+//        val ontologyIn = FileManager.get().open(ontologyPath)
+//        loadOntology(ontologyIn)
+//
+//    }
 
-    fun loadOntology(ontologyPath: String) {
-        val ontologyIn = FileManager.get().open(ontologyPath)
-        ontology.read(ontologyIn, "RDF/XML")
-        ontology.write(System.out)
-        try {
-            ontologyIn.close()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
+    fun loadOntology(inpupStream: InputStream) {
+        val manager = OWLManager.createOWLOntologyManager()
+        ontology = manager.loadOntologyFromOntologyDocument(inpupStream)
+        //ontology.write(System.out)
+//        try {
+//            inpupStream.close()
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
 
     }
 

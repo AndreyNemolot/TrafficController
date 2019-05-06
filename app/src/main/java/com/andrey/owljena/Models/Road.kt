@@ -8,13 +8,11 @@ class Road : Serializable {
     var car: Car
     var sign: ArrayList<Sign>
     var trafficLight: TrafficLight
-    var gadget: ArrayList<Gadget>
 
     init {
         this.roadName = ""
         this.car = Car()
         this.sign = ArrayList()
         this.trafficLight = TrafficLight()
-        this.gadget = ArrayList()
     }
 }

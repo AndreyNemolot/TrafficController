@@ -41,4 +41,8 @@
         <item>Right</item>
     </string-array>
 
+    <string name="xCrossRoadType">X-type cross road</string>
+    <string name="tCrossRoadType">T-type cross road</string>
+
+
 </resources>

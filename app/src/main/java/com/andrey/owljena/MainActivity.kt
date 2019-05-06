@@ -20,6 +20,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import java.io.File
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -29,27 +30,31 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var isStorageRead = false
     var resultList = ArrayList<String>()
 
+    lateinit var file:File
+
     override fun onClick(v: View?) {
         val item_id = v!!.id
-        if (controller!=null){
+
             when (item_id) {
                 R.id.btnGetClass -> {
-                    val str = controller!!.getClass(etRequest.text.toString()).nameSpace
-                    resultList.add(str)
-                    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, resultList)
-
-                    lvResult.adapter = adapter
+                    controller!!.swrl(file)
+//                    val str = controller!!.getClass(etRequest.text.toString()).nameSpace
+//                    resultList.add(str)
+//                    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, resultList)
+//
+//                    lvResult.adapter = adapter
                 }
                 R.id.btnGetSuperClass->{
+                    controller!!.createIndividual(file)
                     //val str = controller!!.getSuperClass(etRequest.text.toString()).localName
 
                 }
                 R.id.btnGetDataProperty->{
-                    val str = controller!!.getDatatypeProperty(etRequest.text.toString())
-                    resultList.add(str.localName)
-                    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, resultList)
-
-                    lvResult.adapter = adapter
+//                    val str = controller!!.getDatatypeProperty(etRequest.text.toString())
+//                    resultList.add(str.localName)
+//                    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, resultList)
+//
+//                    lvResult.adapter = adapter
 
                 }
                 R.id.btnGetAllClasses->{
@@ -78,10 +83,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //                }
 
             }
-        }else{
-            Toast.makeText(this, "Load ontology", Toast.LENGTH_LONG)
-                .show()
-        }
 
     }
 
@@ -96,10 +97,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         btnGetDataProperty.setOnClickListener(this)
         btnCreateDataProperty.setOnClickListener(this)
         btnCreateIndividual.setOnClickListener(this)
-
-        val intent = Intent(this, CrossRoadActivity::class.java)
+        controller = OntologyController()
+        file = File(filesDir, "newOnt.owl")
+        //val intent = Intent(this, CrossRoadActivity::class.java)
 //        val intent = Intent(this, RoadBuilderActivity::class.java)
-        startActivity(intent)
+        //startActivity(intent)
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -217,8 +219,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (requestCode) {
             1 -> {
                 if (resultCode == Activity.RESULT_OK) {
-                    OntologyProvider.instance.loadOntology(data!!.data!!.toString())
-                    controller = OntologyController()
+                    //OntologyProvider.instance.loadOntology(data!!.data!!.path)
                 }
             }
         }

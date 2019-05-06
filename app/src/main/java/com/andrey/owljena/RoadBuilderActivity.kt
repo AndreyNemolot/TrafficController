@@ -14,12 +14,12 @@ import android.widget.Toast
 import com.andrey.owljena.Builders.RoadBuilder
 import com.andrey.owljena.Models.Road
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_cross_road.*
 
 
 class RoadBuilderActivity : AppCompatActivity() {
 
     var roadBuilderArray = ArrayList<Category>()
-    val APP_PREFERENCES = "road"
     lateinit var roadName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class RoadBuilderActivity : AppCompatActivity() {
         val intent = intent
         roadName = intent.getStringExtra("ROAD_NAME")
         roadBuilderArray = RoadData(this).roadBuildArray
-
+        getRoadsFromPref()
 
 
         val adapter = ExpandableListViewAdapter(this, lvBuilder, roadBuilderArray)
@@ -45,6 +45,25 @@ class RoadBuilderActivity : AppCompatActivity() {
 
     }
 
+    fun getRoadsFromPref(){
+        val mPrefs = getSharedPreferences(Constant.APP_PREFERENCES, Context.MODE_PRIVATE)
+            if (mPrefs.contains(roadName)) {
+                val json = mPrefs.getString(roadName, "")
+                val road = Gson().fromJson(json, Road::class.java)
+
+                roadBuilderArray[0].subcategoryArray[road.car.id].selected=true
+                for(i in road.car.gadget.indices){
+                    roadBuilderArray[1].subcategoryArray[road.car.gadget[i].id].selected=true
+                }
+                for(i in road.sign.indices){
+                    roadBuilderArray[2].subcategoryArray[road.sign[i].id].selected=true
+                }
+                roadBuilderArray[3].subcategoryArray[road.trafficLight.id].selected=true
+                roadBuilderArray[4].subcategoryArray[road.car.direction.id].selected=true
+
+        }
+    }
+
     private fun createRoad(roadBuilderArray: ArrayList<Category>, roadName: String): Road {
         val roadBuilder = RoadBuilder()
         val roadParser = RoadParser(roadBuilder, roadBuilderArray, roadName)
@@ -55,12 +74,12 @@ class RoadBuilderActivity : AppCompatActivity() {
     }
 
     private fun isRoadDone(road:Road):Boolean{
-        return road.car.id!=-1 && !road.gadget.isEmpty() && !road.sign.isEmpty()
+        return road.car.id!=-1 && !road.car.gadget.isEmpty() && !road.sign.isEmpty()
                 && road.trafficLight.id!=-1
     }
 
     private fun saveRoad(road: Road) {
-        val mPrefs = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+        val mPrefs = getSharedPreferences(Constant.APP_PREFERENCES, Context.MODE_PRIVATE)
         val prefsEditor = mPrefs.edit()
         val json = Gson().toJson(road)
         prefsEditor.putString(road.roadName, json)
