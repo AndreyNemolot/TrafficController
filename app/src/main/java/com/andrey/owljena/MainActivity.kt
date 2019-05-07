@@ -45,16 +45,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //                    lvResult.adapter = adapter
                 }
                 R.id.btnGetSuperClass->{
-                    controller!!.createIndividual(file)
+                    controller!!.createIndividual(file, "Passenger", "LAMBORGINI")
                     //val str = controller!!.getSuperClass(etRequest.text.toString()).localName
 
                 }
                 R.id.btnGetDataProperty->{
-//                    val str = controller!!.getDatatypeProperty(etRequest.text.toString())
-//                    resultList.add(str.localName)
-//                    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, resultList)
-//
-//                    lvResult.adapter = adapter
+                    controller!!.createDatatypeProperty("Passenger", "LAMBORGINI", "IDnumber", "666")
 
                 }
                 R.id.btnGetAllClasses->{

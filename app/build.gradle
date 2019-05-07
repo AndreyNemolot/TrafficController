@@ -53,7 +53,10 @@ dependencies {
 //        exclude group: 'commons-logging', module: 'commons-logging'
 //    }
 
+    //implementation group: 'net.sourceforge.owlapi', name: 'owlapi-distribution', version: '3.4'
+
     implementation group: 'net.sourceforge.owlapi', name: 'owlapi-distribution', version: '3.4'
+
 
 
     implementation 'com.github.Lukle:ClickableAreasImages:v0.1'

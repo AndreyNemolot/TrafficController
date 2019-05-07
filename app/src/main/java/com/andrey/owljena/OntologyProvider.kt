@@ -10,6 +10,9 @@ import java.io.IOException
 import java.io.InputStream
 import org.semanticweb.owlapi.model.OWLOntologyManager
 import java.io.File
+import com.clarkparsia.owlapiv3.OWL.manager
+
+
 
 
 class OntologyProvider private constructor() {
@@ -22,8 +25,11 @@ class OntologyProvider private constructor() {
 //    }
 
     fun loadOntology(inpupStream: InputStream) {
-        val manager = OWLManager.createOWLOntologyManager()
+        //val manager = OWLManager.createOWLOntologyManager()
+
         ontology = manager.loadOntologyFromOntologyDocument(inpupStream)
+
+
         //ontology.write(System.out)
 //        try {
 //            inpupStream.close()
