@@ -5,10 +5,18 @@ import com.andrey.owljena.Models.Road
 
 class CrossroadBuilder {
 
-    private val roadMap = ArrayList<Road>()
+    private val crossroad = Crossroad()
+
+    fun setCrossroadType(crossroadType: String){
+        crossroad.crossroadType = crossroadType
+    }
+
+    fun addRoad(road: Road){
+        crossroad.roadMap.set(road.roadName, road)
+    }
 
 
-//    fun getResult(): Crossroad {
-//        return road
-//    }
+    fun getResult(): Crossroad {
+        return crossroad
+    }
 }

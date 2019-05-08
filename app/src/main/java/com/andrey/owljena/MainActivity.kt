@@ -45,16 +45,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //                    lvResult.adapter = adapter
                 }
                 R.id.btnGetSuperClass->{
-                    controller!!.createIndividual(file, "Passenger", "LAMBORGINI")
+                    controller!!.createIndividual("Passenger", "LAMBORGINI")
                     //val str = controller!!.getSuperClass(etRequest.text.toString()).localName
 
                 }
                 R.id.btnGetDataProperty->{
                     controller!!.createDatatypeProperty("Passenger", "LAMBORGINI", "IDnumber", "666")
+                    controller!!.createDatatypeProperty("Passenger", "LAMBORGINI", "way", "left")
 
                 }
                 R.id.btnGetAllClasses->{
-                    controller!!.query("PREFIX f: <http://www.owl-ontologies.com/family.owl#> SELECT ?x WHERE { ?x f:parent f:Tom. ?x f:parent f:Jane. }")
+                    controller!!.createObjecteProperty("Road1", "firstCar", "LAMBORGINI")
+                    //controller!!.query("PREFIX f: <http://www.owl-ontologies.com/family.owl#> SELECT ?x WHERE { ?x f:parent f:Tom. ?x f:parent f:Jane. }")
                 }
 //                R.id.btnGetAllClasses->{
 //                    val str = controller!!.listClasses()
@@ -95,9 +97,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         btnCreateIndividual.setOnClickListener(this)
         controller = OntologyController()
         file = File(filesDir, "newOnt.owl")
-        //val intent = Intent(this, CrossRoadActivity::class.java)
+        val intent = Intent(this, CrossRoadActivity::class.java)
 //        val intent = Intent(this, RoadBuilderActivity::class.java)
-        //startActivity(intent)
+        startActivity(intent)
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close

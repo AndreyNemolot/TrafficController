@@ -1,8 +1,8 @@
 package com.andrey.owljena.Models
 
-class Crossroad {
-    val roadMap = HashMap<String, Road>()
+class Crossroad() {
 
-    val trafficLight = HashMap<String,  TrafficLight>()
+    lateinit var crossroadType: String
+    val roadMap = HashMap<String, Road>()
 
 }

@@ -6,7 +6,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         val assetManager = assets
-        val istr = assetManager.open("3.owl")
+        val istr = assetManager.open("4.owl")
         //val istr = assetManager.open("pizza.owl")
         OntologyProvider.instance.loadOntology(istr)
 

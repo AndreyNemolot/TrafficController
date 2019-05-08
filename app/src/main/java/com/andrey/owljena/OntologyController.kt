@@ -28,13 +28,7 @@ import org.semanticweb.owlapi.io.RDFXMLOntologyFormat
 import org.semanticweb.owlapi.util.InferredAxiomGenerator
 import org.semanticweb.owlapi.util.InferredOntologyGenerator
 import org.semanticweb.owlapi.util.InferredPropertyAssertionGenerator
-import java.io.ByteArrayOutputStream
-import com.clarkparsia.owlapiv3.OWL.manager
-import org.semanticweb.owlapi.model.OWLDataProperty
-import com.hp.hpl.jena.assembler.JA.reasoner
-import org.semanticweb.owlapi.model.OWLLiteral
-import org.semanticweb.owlapi.vocab.OWL2Datatype
-import org.semanticweb.owlapi.vocab.OWLFacet
+
 
 
 class OntologyController {
@@ -43,61 +37,48 @@ class OntologyController {
     private var isOntologyLoaded = false
     private val ontIRI = "http://www.owl-ontologies.com/roadRules.owl"
     private lateinit var pm: PrefixOWLOntologyFormat
+    private val filePath = "/data/user/0/com.andrey.owljena/files"
 
     init {
         ontologyProvider = OntologyProvider.instance
         isOntologyLoaded = ontologyProvider.ontology != null
         pm = manager.getOntologyFormat(ontologyProvider.ontology).asPrefixOWLOntologyFormat()
-        //owlNamespace = ontologyProvider.ontology.getNsPrefixURI("")
     }
 
 
-    internal fun createIndividual(file: File, indClass: String, indName: String) {
-
+    internal fun createIndividual(indClass: String, indName: String) {
 
         val cls = manager.owlDataFactory.getOWLClass(IRI.create(ontIRI + "#" + indClass))
-
         val ind = factory.getOWLNamedIndividual(":" + indName, pm)
         val axiom = factory.getOWLClassAssertionAxiom(cls, ind)
         val addAxion = AddAxiom(ontologyProvider.ontology, axiom)
         manager.applyChange(addAxion)
-        //val out = FileOutputStream(file)
-        //manager.saveOntology(ontologyProvider.ontology, out)
+
 
     }
 
     internal fun createDatatypeProperty(indClass: String, indName: String, propertyName: String, value: String){
         val cls = manager.owlDataFactory.getOWLClass(IRI.create(ontIRI + "#" + indClass))
         val ind = factory.getOWLNamedIndividual(":" + indName, pm)
-
         val hasTodo = factory.getOWLDataProperty(propertyName, pm)
         val dataPropertyAssertion = factory
             .getOWLDataPropertyAssertionAxiom(hasTodo, ind, value);
 
+        manager.addAxiom(ontologyProvider.ontology, dataPropertyAssertion);
+    }
+
+    internal fun createObjecteProperty(firstIndName: String, propertyName: String, secondIndName: String){
+        val firstInd = factory.getOWLNamedIndividual(":" + firstIndName, pm)
+        val secondInd = factory.getOWLNamedIndividual(":" + secondIndName, pm)
+        val objectProperty = factory.getOWLObjectProperty(propertyName, pm)
+        val dataPropertyAssertion = factory
+            .getOWLObjectPropertyAssertionAxiom(objectProperty, firstInd, secondInd)
 
         manager.addAxiom(ontologyProvider.ontology, dataPropertyAssertion);
-        val file = File("/data/user/0/com.andrey.owljena/files", "newOnt.owl")
-        val out = FileOutputStream(file)
-        manager.saveOntology(ontologyProvider.ontology, out)
     }
 
 
-    internal fun query(queryString: String) {
 
-//        val query = QueryFactory.create(queryString);
-//        val qexec = QueryExecutionFactory.create(query, ontologyProvider.ontology)
-//        val results = qexec.execSelect()
-//        //ResultSetFormatter.out(System.out, results, query)
-//
-//        while (results.hasNext()) {
-//            val soln = results.nextSolution()
-//            val r = soln.getResource("?x").localName // Get a result variable - must be a resource
-//            ResultSetFormatter.out(System.out, results, query)
-//        }
-//
-//        qexec.close()
-
-    }
 
     internal fun swrl(file: File) {
         //val manager = OWLManager.createOWLOntologyManager()
@@ -138,35 +119,31 @@ class OntologyController {
         manager.saveOntology(ontologyProvider.ontology, out)
     }
 
-//    private fun listSWRLRules(ontology: OWLOntology) {
-//        val renderer = DLSyntaxObjectRenderer()
-//        for (rule in ontology.getAxioms(AxiomType.DATA_PROPERTY_DOMAIN)) {
-//            System.out.println(renderer.render(rule))
-//        }
-//    }
+    fun saveOntology(){
+        val file = File(filePath, "newOnt.owl")
+        val out = FileOutputStream(file)
+        manager.saveOntology(ontologyProvider.ontology, out)
+    }
 
-//    private fun getIndividuals(
-//        superclass: String,
-//        o: OWLOntology
-//    ): Set<OWLIndividual> {
+    internal fun query(queryString: String) {
+
+//        val query = QueryFactory.create(queryString);
+//        val qexec = QueryExecutionFactory.create(query, ontologyProvider.ontology)
+//        val results = qexec.execSelect()
+//        //ResultSetFormatter.out(System.out, results, query)
 //
-//        val reasoner = PelletReasonerFactory.getInstance()
-//            .createReasoner(o)
-//        val instances = reasoner.getInstances(
-//            OWL.Class(IRI.create(superclass)), false
-//        ).flattened
-//
-//        // filter out all owl:sameAs instances...
-//        val ind = TreeSet()
-//        for (i in instances) {
-//            ind.add(i)
+//        while (results.hasNext()) {
+//            val soln = results.nextSolution()
+//            val r = soln.getResource("?x").localName // Get a result variable - must be a resource
+//            ResultSetFormatter.out(System.out, results, query)
 //        }
-//        logger.info("|I| = " + ind.size)
-//        logger.debug("I = $ind")
 //
-//        return ind
-//
-//    }
+//        qexec.close()
+
+    }
+
+
+
 
 
 }

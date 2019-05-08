@@ -4,10 +4,13 @@ import android.content.Context
 import android.graphics.*
 import com.andrey.owljena.Models.Road
 import android.graphics.Bitmap
+import com.andrey.owljena.Builders.CrossroadBuilder
+import com.andrey.owljena.Models.Crossroad
 import kotlin.math.sign
 
 
-class Painter(val context: Context, val roadMap: HashMap<String, Road>, val crossRoadType: String) {
+//class Painter(val context: Context, val roadMap: HashMap<String, Road>, val crossRoadType: String) {
+class Painter(val context: Context, val crossroad: Crossroad) {
 
     val LEFT_ROAD = "LeftRoad"
     val RIGHT_RAOD = "RightRoad"
@@ -39,9 +42,9 @@ class Painter(val context: Context, val roadMap: HashMap<String, Road>, val cros
 
 
     fun paint(): Bitmap {
-        var crossroadBitmap = getBitmapFromAssets(crossRoadType)
+        var crossroadBitmap = getBitmapFromAssets(crossroad.crossroadType + ".png")
 
-        for ((key, value) in roadMap) {
+        for ((key, value) in crossroad.roadMap) {
 
             when (key) {
                 LEFT_ROAD -> {

@@ -1,0 +1,3211 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.owl-ontologies.com/roadRules.owl#"
+    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://www.owl-ontologies.com/Ontology1460558758.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+    <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Firefighter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Trolleybus">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Public"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Passenger">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Ambulance">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Police">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#LeftTCrossroad">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#CrossRoad"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Tram">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Public"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Bus">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Public"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrioritySign">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#ComplexSign">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#XCrossroad">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#CrossRoad"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveSign">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Public">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#WarningSign">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#BlackTL">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#color"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >black</owl:hasValue>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Urgent">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#specialSignal"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</owl:hasValue>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#specialSound"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</owl:hasValue>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#RestrictSign">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Post">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#InformativeSign">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Collectors">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#RightTCrossroad">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#CrossRoad"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Truck">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#GasService">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#Special">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#TCrossroad">
+    <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/roadRules.owl#CrossRoad"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#firstCar">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#roadSign">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#fourthCar">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#roadUp">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#LeftTCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#RightTCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#XCrossroad"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#additional_sign">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ComplexSign"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Sign"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#thirdCar">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#roadDown">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#LeftTCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#RightTCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#TCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#XCrossroad"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#roadLeft">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#LeftTCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#TCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#XCrossroad"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#secondCar">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#roadRight">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#RightTCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#TCrossroad"/>
+          <owl:Class rdf:about="http://www.owl-ontologies.com/roadRules.owl#XCrossroad"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#main_sign">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveSign"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#PrioritySign"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#RestrictSign"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/roadRules.owl#WarningSign"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ComplexSign"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#priority">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#IDnumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#specialSignal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#specialSound">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#color">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >yellow</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >green</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >black</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >red</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#signalColor">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >blue</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >redAndBlue</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >yellow</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >moonWhite</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#toDo">
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#roadPriority">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/roadRules.owl#way">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >down</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >up</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >right</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >left</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <PrioritySign rdf:about="http://www.owl-ontologies.com/roadRules.owl#EndMainRoad"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#giveWaySign">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Wait for car in main road</swrl:argument2>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#me"/>
+            </swrl:argument1>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#my"/>
+            </swrl:argument1>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >green</swrl:argument2>
+                            <swrl:argument1>
+                              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                            </swrl:argument1>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:ClassAtom>
+                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                              </swrl:ClassAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                <swrl:argument2>
+                  <PrioritySign rdf:about="http://www.owl-ontologies.com/roadRules.owl#giveWay"/>
+                </swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadSign"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#stopOnTL">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >STOP!</swrl:argument2>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#c"/>
+            </swrl:argument1>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                <swrl:argument1>
+                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                </swrl:argument1>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:ClassAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                      </swrl:ClassAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:DatavaluedPropertyAtom>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                                <swrl:argument2 rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#string"
+                                >red</swrl:argument2>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                              </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <PrioritySign rdf:about="http://www.owl-ontologies.com/roadRules.owl#Stop"/>
+  <Trolleybus rdf:about="http://www.owl-ontologies.com/roadRules.owl#Trolleybus23">
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</priority>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >K111ME23</IDnumber>
+  </Trolleybus>
+  <Passenger rdf:about="http://www.owl-ontologies.com/roadRules.owl#Nissan">
+    <way rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >left</way>
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</priority>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >T005TK65</IDnumber>
+  </Passenger>
+  <Bus rdf:about="http://www.owl-ontologies.com/roadRules.owl#Icarus">
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</priority>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >B453HH78</IDnumber>
+  </Bus>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#goUpOnRoadWithTL">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >up</swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#way"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                                    <swrl:argument2 rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >green</swrl:argument2>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Can go up</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setFirstPriority1">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            </swrl:argument1>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSound"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >true</swrl:argument2>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSignal"/>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >false</swrl:argument2>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#wp"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#specialAuto">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#CrossRoad"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                                <swrl:argument2>
+                                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+                                </swrl:argument2>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadDown"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadLeft"/>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                                    <swrl:argument2>
+                                      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#other1"/>
+                                    </swrl:argument2>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:IndividualPropertyAtom>
+                                        <swrl:argument2>
+                                          <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#other2"/>
+                                        </swrl:argument2>
+                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadUp"/>
+                                      </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest>
+                                              <swrl:AtomList>
+                                                <rdf:rest>
+                                                  <swrl:AtomList>
+                                                    <rdf:rest>
+                                                      <swrl:AtomList>
+                                                        <rdf:rest>
+                                                          <swrl:AtomList>
+                                                            <rdf:first>
+                                                              <swrl:IndividualPropertyAtom>
+    <swrl:argument2>
+      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#specOne"/>
+    </swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+                                                              </swrl:IndividualPropertyAtom>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                              <swrl:AtomList>
+    <rdf:first>
+      <swrl:IndividualPropertyAtom>
+        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1"/>
+        <swrl:argument2>
+          <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#other1One"/>
+        </swrl:argument2>
+      </swrl:IndividualPropertyAtom>
+    </rdf:first>
+    <rdf:rest>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2"/>
+            <swrl:argument2>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#other2One"/>
+            </swrl:argument2>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+                    <swrl:argument1>
+                      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#special"/>
+                    </swrl:argument1>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#special"/>
+                            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                            >4</swrl:argument2>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#special"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                <swrl:argument2>
+                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#other3One"/>
+                </swrl:argument2>
+                <swrl:argument1>
+                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#other3"/>
+                </swrl:argument1>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </rdf:rest>                                               </swrl:AtomList>
+                                                            </rdf:rest>
+                                                          </swrl:AtomList>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                          <swrl:ClassAtom>
+                                                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3One"/>
+                                                          </swrl:ClassAtom>
+                                                        </rdf:first>
+                                                      </swrl:AtomList>
+                                                    </rdf:rest>
+                                                    <rdf:first>
+                                                      <swrl:ClassAtom>
+                                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2One"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                      </swrl:ClassAtom>
+                                                    </rdf:first>
+                                                  </swrl:AtomList>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                  <swrl:ClassAtom>
+                                                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1One"/>
+                                                  </swrl:ClassAtom>
+                                                </rdf:first>
+                                              </swrl:AtomList>
+                                            </rdf:rest>
+                                            <rdf:first>
+                                              <swrl:ClassAtom>
+                                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specOne"/>
+                                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                              </swrl:ClassAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                          <swrl:IndividualPropertyAtom>
+                                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3"/>
+                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadRight"/>
+                                          </swrl:IndividualPropertyAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:ClassAtom>
+                        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2"/>
+                      </swrl:ClassAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >red</swrl:argument2>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2One"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3One"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >red</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >red</swrl:argument2>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1One"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >green</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specOne"/>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <Bus rdf:about="http://www.owl-ontologies.com/roadRules.owl#Bus142">
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</priority>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >E145OP98</IDnumber>
+  </Bus>
+  <PrescriptiveSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveGoStraight"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setFirstPriority2">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >true</swrl:argument2>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSignal"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >false</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSound"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</swrl:argument2>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#giveRoadToUrgent">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1"/>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:ClassAtom>
+                        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2"/>
+                      </swrl:ClassAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3"/>
+                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadLeft"/>
+                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:IndividualPropertyAtom>
+                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadUp"/>
+                                      </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:first>
+                                          <swrl:IndividualPropertyAtom>
+                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadRight"/>
+                                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3"/>
+                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                                          </swrl:IndividualPropertyAtom>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest>
+                                              <swrl:AtomList>
+                                                <rdf:first>
+                                                  <swrl:ClassAtom>
+                                                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1One"/>
+                                                  </swrl:ClassAtom>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                  <swrl:AtomList>
+                                                    <rdf:first>
+                                                      <swrl:ClassAtom>
+                                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2One"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                      </swrl:ClassAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                      <swrl:AtomList>
+                                                        <rdf:first>
+                                                          <swrl:ClassAtom>
+                                                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3One"/>
+                                                          </swrl:ClassAtom>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                          <swrl:AtomList>
+                                                            <rdf:first>
+                                                              <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specOne"/>
+    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                                                              </swrl:IndividualPropertyAtom>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                              <swrl:AtomList>
+    <rdf:rest>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Urgent"/>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#special"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#special"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+                            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+                            >4</swrl:argument2>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#special"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3"/>
+                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3One"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2One"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </rdf:rest>
+    <rdf:first>
+      <swrl:IndividualPropertyAtom>
+        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1"/>
+        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1One"/>
+        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+      </swrl:IndividualPropertyAtom>
+    </rdf:first>                                              </swrl:AtomList>
+                                                            </rdf:rest>
+                                                          </swrl:AtomList>
+                                                        </rdf:rest>
+                                                      </swrl:AtomList>
+                                                    </rdf:rest>
+                                                  </swrl:AtomList>
+                                                </rdf:rest>
+                                              </swrl:AtomList>
+                                            </rdf:rest>
+                                            <rdf:first>
+                                              <swrl:ClassAtom>
+                                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specOne"/>
+                                              </swrl:ClassAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadDown"/>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#spec"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#CrossRoad"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >red</swrl:argument2>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other2One"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other3One"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >red</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >red</swrl:argument2>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other1One"/>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specOne"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >green</swrl:argument2>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setFirstPriority3">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSignal"/>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >false</swrl:argument2>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSound"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >false</swrl:argument2>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</swrl:argument2>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#waitCarOnRight">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Wait for car on right</swrl:argument2>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#myCar"/>
+            </swrl:argument1>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                    <swrl:argument1>
+                      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#other"/>
+                    </swrl:argument1>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest>
+                                              <swrl:AtomList>
+                                                <rdf:rest>
+                                                  <swrl:AtomList>
+                                                    <rdf:rest>
+                                                      <swrl:AtomList>
+                                                        <rdf:rest>
+                                                          <swrl:AtomList>
+                                                            <rdf:first>
+                                                              <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1>
+      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#onMy"/>
+    </swrl:argument1>
+    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >black</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                                                              </swrl:DatavaluedPropertyAtom>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                              <swrl:AtomList>
+    <rdf:first>
+      <swrl:DatavaluedPropertyAtom>
+        <swrl:argument1>
+          <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#onOther"/>
+        </swrl:argument1>
+        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >black</swrl:argument2>
+        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+      </swrl:DatavaluedPropertyAtom>
+    </rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                              </swrl:AtomList>
+                                                            </rdf:rest>
+                                                          </swrl:AtomList>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                          <swrl:IndividualPropertyAtom>
+                                                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#onOther"/>
+                                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other"/>
+                                                          </swrl:IndividualPropertyAtom>
+                                                        </rdf:first>
+                                                      </swrl:AtomList>
+                                                    </rdf:rest>
+                                                    <rdf:first>
+                                                      <swrl:IndividualPropertyAtom>
+                                                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#onMy"/>
+                                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                                                      </swrl:IndividualPropertyAtom>
+                                                    </rdf:first>
+                                                  </swrl:AtomList>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                  <swrl:ClassAtom>
+                                                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#onOther"/>
+                                                  </swrl:ClassAtom>
+                                                </rdf:first>
+                                              </swrl:AtomList>
+                                            </rdf:rest>
+                                            <rdf:first>
+                                              <swrl:ClassAtom>
+                                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#onMy"/>
+                                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                              </swrl:ClassAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                          <swrl:IndividualPropertyAtom>
+                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                                            <swrl:argument2>
+                                              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#otherCar"/>
+                                            </swrl:argument2>
+                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other"/>
+                                          </swrl:IndividualPropertyAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                    <rdf:first>
+                                      <swrl:IndividualPropertyAtom>
+                                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#myCar"/>
+                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                                      </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:ClassAtom>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#otherCar"/>
+                                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+                                  </swrl:ClassAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:ClassAtom>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#myCar"/>
+                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+                              </swrl:ClassAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#other"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadRight"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadDown"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#CrossRoad"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <RestrictSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#RestrictTurnLeft"/>
+  <PrescriptiveSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveGoStraightOrTurnRight"/>
+  <Collectors rdf:about="http://www.owl-ontologies.com/roadRules.owl#Sberbank">
+    <signalColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >moonWhite</signalColor>
+    <specialSound rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</specialSound>
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</priority>
+    <specialSignal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</specialSignal>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A637OO13</IDnumber>
+  </Collectors>
+  <PrescriptiveSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveSignTurnLeftOrTurnRight"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setSecondPriority">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Truck"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</swrl:argument2>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#m"/>
+  <Truck rdf:about="http://www.owl-ontologies.com/roadRules.owl#Zil">
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A575BM75</IDnumber>
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</priority>
+  </Truck>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setFourthPriority">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >4</swrl:argument2>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSound"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >true</swrl:argument2>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSignal"/>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >true</swrl:argument2>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <PrescriptiveSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveTurnRight"/>
+  <Bus rdf:about="http://www.owl-ontologies.com/roadRules.owl#FordBus">
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >O456OP56</IDnumber>
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</priority>
+  </Bus>
+  <Truck rdf:about="http://www.owl-ontologies.com/roadRules.owl#BelAz">
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</priority>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >M000HK76</IDnumber>
+  </Truck>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#switchColorsOnTL1">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >green</swrl:argument2>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#utl"/>
+            </swrl:argument1>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                <swrl:argument1>
+                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#dtl"/>
+                </swrl:argument1>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >green</swrl:argument2>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >red</swrl:argument2>
+                        <swrl:argument1>
+                          <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#ltl"/>
+                        </swrl:argument1>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >red</swrl:argument2>
+                    <swrl:argument1>
+                      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#rtl"/>
+                    </swrl:argument1>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1>
+                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                </swrl:argument1>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                    <swrl:argument1>
+                      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                    </swrl:argument1>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:ClassAtom>
+                        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                        <swrl:argument1>
+                          <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                        </swrl:argument1>
+                      </swrl:ClassAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest>
+                                              <swrl:AtomList>
+                                                <rdf:rest>
+                                                  <swrl:AtomList>
+                                                    <rdf:rest>
+                                                      <swrl:AtomList>
+                                                        <rdf:rest>
+                                                          <swrl:AtomList>
+                                                            <rdf:first>
+                                                              <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#utl"/>
+                                                              </swrl:ClassAtom>
+                                                            </rdf:first>
+                                                            <rdf:rest>
+                                                              <swrl:AtomList>
+    <rdf:first>
+      <swrl:ClassAtom>
+        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ltl"/>
+        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+      </swrl:ClassAtom>
+    </rdf:first>
+    <rdf:rest>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dtl"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#utl"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ltl"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:arguments>
+                                      <rdf:List>
+                                        <rdf:first>
+                                          <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#verts"/>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                          <rdf:List>
+                                            <rdf:first>
+                                              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#urp"/>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                              <rdf:List>
+                                                <rdf:first>
+                                                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#drp"/>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                              </rdf:List>
+                                            </rdf:rest>
+                                          </rdf:List>
+                                        </rdf:rest>
+                                      </rdf:List>
+                                    </swrl:arguments>
+                                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:BuiltinAtom>
+                                        <swrl:arguments>
+                                          <rdf:List>
+                                            <rdf:first>
+                                              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#hors"/>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                              <rdf:List>
+                                                <rdf:first>
+                                                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#lrp"/>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:first>
+                                                      <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#rrp"/>
+                                                    </rdf:first>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                              </rdf:List>
+                                            </rdf:rest>
+                                          </rdf:List>
+                                        </swrl:arguments>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                      </swrl:BuiltinAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:arguments>
+                                              <rdf:List>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#hors"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                                <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#verts"/>
+                                              </rdf:List>
+                                            </swrl:arguments>
+                                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dtl"/>
+                                <swrl:argument1>
+                                  <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                                </swrl:argument1>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rtl"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rtl"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </rdf:rest>                                               </swrl:AtomList>
+                                                            </rdf:rest>
+                                                          </swrl:AtomList>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                          <swrl:DatavaluedPropertyAtom>
+                                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#drp"/>
+                                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                                                          </swrl:DatavaluedPropertyAtom>
+                                                        </rdf:first>
+                                                      </swrl:AtomList>
+                                                    </rdf:rest>
+                                                    <rdf:first>
+                                                      <swrl:DatavaluedPropertyAtom>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rrp"/>
+                                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                                                      </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                  </swrl:AtomList>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                  <swrl:DatavaluedPropertyAtom>
+                                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lrp"/>
+                                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                                                  </swrl:DatavaluedPropertyAtom>
+                                                </rdf:first>
+                                              </swrl:AtomList>
+                                            </rdf:rest>
+                                            <rdf:first>
+                                              <swrl:DatavaluedPropertyAtom>
+                                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#urp"/>
+                                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                              </swrl:DatavaluedPropertyAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                          <swrl:IndividualPropertyAtom>
+                                            <swrl:argument1>
+                                              <swrl:Variable rdf:about="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                            </swrl:argument1>
+                                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadDown"/>
+                                          </swrl:IndividualPropertyAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                    <rdf:first>
+                                      <swrl:IndividualPropertyAtom>
+                                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadUp"/>
+                                      </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadRight"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadLeft"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#XCrossroad"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <Police rdf:about="http://www.owl-ontologies.com/roadRules.owl#PoliceR5">
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</priority>
+    <signalColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >redAndBlue</signalColor>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >H654PO27</IDnumber>
+    <specialSound rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</specialSound>
+    <specialSignal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</specialSignal>
+  </Police>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#switchColorsOnTL2">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ltl"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >green</swrl:argument2>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >green</swrl:argument2>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rtl"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dtl"/>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >red</swrl:argument2>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >red</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#utl"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:ClassAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                      </swrl:ClassAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest>
+                                              <swrl:AtomList>
+                                                <rdf:rest>
+                                                  <swrl:AtomList>
+                                                    <rdf:first>
+                                                      <swrl:DatavaluedPropertyAtom>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                                                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rrp"/>
+                                                      </swrl:DatavaluedPropertyAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest>
+                                                      <swrl:AtomList>
+                                                        <rdf:rest>
+                                                          <swrl:AtomList>
+                                                            <rdf:rest>
+                                                              <swrl:AtomList>
+    <rdf:rest>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rtl"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dtl"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#utl"/>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ltl"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                            <swrl:arguments>
+                                              <rdf:List>
+                                                <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#hors"/>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#verts"/>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                              </rdf:List>
+                                            </swrl:arguments>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                    <rdf:first>
+                                      <swrl:BuiltinAtom>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                        <swrl:arguments>
+                                          <rdf:List>
+                                            <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#hors"/>
+                                            <rdf:rest>
+                                              <rdf:List>
+                                                <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lrp"/>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rrp"/>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                              </rdf:List>
+                                            </rdf:rest>
+                                          </rdf:List>
+                                        </swrl:arguments>
+                                      </swrl:BuiltinAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:BuiltinAtom>
+                                    <swrl:arguments>
+                                      <rdf:List>
+                                        <rdf:rest>
+                                          <rdf:List>
+                                            <rdf:rest>
+                                              <rdf:List>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#drp"/>
+                                              </rdf:List>
+                                            </rdf:rest>
+                                            <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#urp"/>
+                                          </rdf:List>
+                                        </rdf:rest>
+                                        <rdf:first rdf:resource="http://www.owl-ontologies.com/roadRules.owl#verts"/>
+                                      </rdf:List>
+                                    </swrl:arguments>
+                                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                  </swrl:BuiltinAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dtl"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:IndividualPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rtl"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                          </swrl:IndividualPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </rdf:rest>
+    <rdf:first>
+      <swrl:ClassAtom>
+        <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ltl"/>
+      </swrl:ClassAtom>
+    </rdf:first>                                              </swrl:AtomList>
+                                                            </rdf:rest>
+                                                            <rdf:first>
+                                                              <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#utl"/>
+    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                                                              </swrl:ClassAtom>
+                                                            </rdf:first>
+                                                          </swrl:AtomList>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                          <swrl:DatavaluedPropertyAtom>
+                                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#drp"/>
+                                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                                                          </swrl:DatavaluedPropertyAtom>
+                                                        </rdf:first>
+                                                      </swrl:AtomList>
+                                                    </rdf:rest>
+                                                  </swrl:AtomList>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                  <swrl:DatavaluedPropertyAtom>
+                                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lrp"/>
+                                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                                                  </swrl:DatavaluedPropertyAtom>
+                                                </rdf:first>
+                                              </swrl:AtomList>
+                                            </rdf:rest>
+                                            <rdf:first>
+                                              <swrl:DatavaluedPropertyAtom>
+                                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#urp"/>
+                                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadPriority"/>
+                                              </swrl:DatavaluedPropertyAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                          <swrl:IndividualPropertyAtom>
+                                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                            <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#dr"/>
+                                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadDown"/>
+                                          </swrl:IndividualPropertyAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                    <rdf:first>
+                                      <swrl:IndividualPropertyAtom>
+                                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ur"/>
+                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadUp"/>
+                                      </swrl:IndividualPropertyAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#rr"/>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadRight"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadLeft"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#lr"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#XCrossroad"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#cr"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <PrioritySign rdf:about="http://www.owl-ontologies.com/roadRules.owl#AdjuctionToMainWithSecondaryRoad"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#complexMainRoadSign_Right">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Turn right first</swrl:argument2>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                <swrl:argument2>
+                  <ComplexSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#ComplexSignRightMainRoad">
+                    <main_sign>
+                      <PrioritySign rdf:about="http://www.owl-ontologies.com/roadRules.owl#MainRoad"/>
+                    </main_sign>
+                    <additional_sign>
+                      <InformativeSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#RoadGoesRight"/>
+                    </additional_sign>
+                  </ComplexSign>
+                </swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadSign"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:ClassAtom>
+                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                              </swrl:ClassAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    <rdf:first>
+                                      <swrl:DatavaluedPropertyAtom>
+                                        <swrl:argument2 rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >right</swrl:argument2>
+                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#way"/>
+                                      </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >green</swrl:argument2>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <PrescriptiveSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveTurnLeft"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#turnRightOnRoadWithTL">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Can turn right</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >right</swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#way"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                                    <swrl:argument2 rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >green</swrl:argument2>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#makeUrgent">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Urgent"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Special"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSound"/>
+                    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >true</swrl:argument2>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#specialSignal"/>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                >true</swrl:argument2>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <RestrictSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#RestrictTurnRight"/>
+  <XCrossroad rdf:about="http://www.owl-ontologies.com/roadRules.owl#XCrossroad1">
+    <roadDown>
+      <Road rdf:about="http://www.owl-ontologies.com/roadRules.owl#Road1">
+        <secondCar>
+          <Passenger rdf:about="http://www.owl-ontologies.com/roadRules.owl#Lada">
+            <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Y125EK47</IDnumber>
+            <way rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >up</way>
+            <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</priority>
+          </Passenger>
+        </secondCar>
+        <roadSign>
+          <ComplexSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#ComplexSignLeftMainRoad">
+            <main_sign rdf:resource="http://www.owl-ontologies.com/roadRules.owl#MainRoad"/>
+            <additional_sign>
+              <InformativeSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#RoadGoesLeft"/>
+            </additional_sign>
+          </ComplexSign>
+        </roadSign>
+        <roadPriority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</roadPriority>
+        <roadTrafficLight>
+          <TrafficLight rdf:about="http://www.owl-ontologies.com/roadRules.owl#TrafficLight1">
+            <color rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >green</color>
+          </TrafficLight>
+        </roadTrafficLight>
+      </Road>
+    </roadDown>
+    <roadRight>
+      <Road rdf:about="http://www.owl-ontologies.com/roadRules.owl#Road4">
+        <roadPriority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</roadPriority>
+        <roadSign rdf:resource="http://www.owl-ontologies.com/roadRules.owl#giveWay"/>
+        <firstCar>
+          <Passenger rdf:about="http://www.owl-ontologies.com/roadRules.owl#AlfaRomeo">
+            <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</priority>
+            <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >B112TM34</IDnumber>
+            <way rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >up</way>
+          </Passenger>
+        </firstCar>
+        <roadTrafficLight>
+          <TrafficLight rdf:about="http://www.owl-ontologies.com/roadRules.owl#TrafficLight4">
+            <color rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >red</color>
+          </TrafficLight>
+        </roadTrafficLight>
+        <secondCar>
+          <Passenger rdf:about="http://www.owl-ontologies.com/roadRules.owl#Chayka">
+            <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</priority>
+            <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >B112TM35</IDnumber>
+            <way rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >up</way>
+          </Passenger>
+        </secondCar>
+      </Road>
+    </roadRight>
+    <roadUp>
+      <Road rdf:about="http://www.owl-ontologies.com/roadRules.owl#Road3">
+        <firstCar>
+          <Passenger rdf:about="http://www.owl-ontologies.com/roadRules.owl#Opel">
+            <way rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >up</way>
+            <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</priority>
+            <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >A554PO54</IDnumber>
+          </Passenger>
+        </firstCar>
+        <roadTrafficLight>
+          <TrafficLight rdf:about="http://www.owl-ontologies.com/roadRules.owl#TrafficLight3">
+            <color rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >green</color>
+          </TrafficLight>
+        </roadTrafficLight>
+        <roadSign rdf:resource="http://www.owl-ontologies.com/roadRules.owl#giveWay"/>
+        <roadPriority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</roadPriority>
+      </Road>
+    </roadUp>
+    <roadLeft>
+      <Road rdf:about="http://www.owl-ontologies.com/roadRules.owl#Road2">
+        <roadTrafficLight>
+          <TrafficLight rdf:about="http://www.owl-ontologies.com/roadRules.owl#TrafficLight2">
+            <color rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >red</color>
+          </TrafficLight>
+        </roadTrafficLight>
+        <firstCar>
+          <Passenger rdf:about="http://www.owl-ontologies.com/roadRules.owl#Hummer">
+            <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >H333HH77</IDnumber>
+            <way rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >up</way>
+            <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</priority>
+          </Passenger>
+        </firstCar>
+        <roadPriority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</roadPriority>
+        <roadSign rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ComplexSignRightMainRoad"/>
+      </Road>
+    </roadLeft>
+  </XCrossroad>
+  <Ambulance rdf:about="http://www.owl-ontologies.com/roadRules.owl#AmbulanceZ4">
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</priority>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >T884HE65</IDnumber>
+    <specialSound rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</specialSound>
+    <specialSignal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</specialSignal>
+    <signalColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >blue</signalColor>
+  </Ambulance>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setFourthPriority1">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Urgent"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >4</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setFirstPriority">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Passenger"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+            >1</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <Firefighter rdf:about="http://www.owl-ontologies.com/roadRules.owl#Firefighter_4">
+    <specialSound rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</specialSound>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >M435BT43</IDnumber>
+    <specialSignal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</specialSignal>
+    <signalColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >blue</signalColor>
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</priority>
+  </Firefighter>
+  <PrescriptiveSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#PrescriptiveGoStraightOrTurnLeft"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#setThirdPriority">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Public"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#priority"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#x"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >3</swrl:argument2>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <Passenger rdf:about="http://www.owl-ontologies.com/roadRules.owl#Telega">
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</priority>
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >I111II11</IDnumber>
+  </Passenger>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#turnLeftOnRoadWithTL">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Can turn left</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#way"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >left</swrl:argument2>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:IndividualPropertyAtom>
+                                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                              </swrl:IndividualPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                                    <swrl:argument2 rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >green</swrl:argument2>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#c"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#r"/>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <PrioritySign rdf:about="http://www.owl-ontologies.com/roadRules.owl#CrossMainBySecondaryRoad"/>
+  <Tram rdf:about="http://www.owl-ontologies.com/roadRules.owl#Tram40">
+    <IDnumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >M145TO65</IDnumber>
+    <priority rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</priority>
+  </Tram>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#mainRoadSign">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Go first</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >green</swrl:argument2>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:ClassAtom>
+                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                              </swrl:ClassAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#MainRoad"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadSign"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <RestrictSign rdf:about="http://www.owl-ontologies.com/roadRules.owl#RestrictTurnAround"/>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/roadRules.owl#complexMainRoadSign_Left">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#toDo"/>
+            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Turn left first</swrl:argument2>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Road"/>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                            <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >green</swrl:argument2>
+                            <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#color"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    <rdf:first>
+                                      <swrl:DatavaluedPropertyAtom>
+                                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#way"/>
+                                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                                        <swrl:argument2 rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >left</swrl:argument2>
+                                      </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:IndividualPropertyAtom>
+                                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                                    <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#firstCar"/>
+                                  </swrl:IndividualPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:ClassAtom>
+                                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#me"/>
+                                <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#Car"/>
+                              </swrl:ClassAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:IndividualPropertyAtom>
+                        <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                        <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadTrafficLight"/>
+                      </swrl:IndividualPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:ClassAtom>
+                    <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#tl"/>
+                    <swrl:classPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#TrafficLight"/>
+                  </swrl:ClassAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#ComplexSignLeftMainRoad"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/roadRules.owl#my"/>
+                <swrl:propertyPredicate rdf:resource="http://www.owl-ontologies.com/roadRules.owl#roadSign"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.1, Build 536)  http://protege.stanford.edu -->
